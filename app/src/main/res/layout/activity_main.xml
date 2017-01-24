@@ -11,4 +11,23 @@
     tools:context="es.ulpgc.da.ejemplo.MainActivity">
 
 
+    <TextView
+        android:text="TextView"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/display"
+        android:layout_above="@+id/boton1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="82dp" />
+
+    <Button
+        android:text="Button"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/boton1"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/display" />
 </RelativeLayout>
