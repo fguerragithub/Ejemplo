@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/display"
         android:layout_marginBottom="75dp"
-        android:layout_above="@+id/boton1"
+        android:layout_above="@+id/boton"
         android:layout_centerHorizontal="true" />
 
     <Button
