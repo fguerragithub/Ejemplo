@@ -1,4 +1,4 @@
-package es.ulpgc.da.ejemplo;
+package es.ulpgc.da.ejemplo.view;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,9 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ViewCounter extends Activity {
+import es.ulpgc.da.ejemplo.presenter.PresenterCounter;
+import es.ulpgc.da.ejemplo.presenter.IPresenterCounter;
+import es.ulpgc.da.ejemplo.R;
 
-    private PresenterCounter presenterCounter;
+public class ViewCounter extends Activity implements IViewCounter {
+
+    private IPresenterCounter presenterCounter;
     private TextView display;
     private Button boton;
 
@@ -16,7 +20,7 @@ public class ViewCounter extends Activity {
 
         @Override
         public void onClick(View v) {
-            presenterCounter.onClickBoton1();
+            presenterCounter.onClickBoton();
         }
     }
 

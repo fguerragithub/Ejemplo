@@ -1,6 +1,6 @@
-package es.ulpgc.da.ejemplo;
+package es.ulpgc.da.ejemplo.model;
 
-public class ModelCounter {
+public class ModelCounter implements IModelCounter{
     private int counter;
 
     public ModelCounter() {
