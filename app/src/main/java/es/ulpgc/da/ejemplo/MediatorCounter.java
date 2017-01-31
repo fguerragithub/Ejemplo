@@ -19,12 +19,6 @@ public class MediatorCounter extends Application {
     private IPresenterCounter presenterCounter;
     private IViewCounter      viewCounter;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        startActivity(new Intent(this, ViewCounter.class));
-    }
-
     public IPresenterCounter getPresenterCounter(){
         return presenterCounter;
     }
