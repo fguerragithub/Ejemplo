@@ -6,13 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import es.ulpgc.da.ejemplo.presenter.PresenterCounter;
-import es.ulpgc.da.ejemplo.presenter.IPresenterCounter;
+import es.ulpgc.da.ejemplo.MediatorCounter;
 import es.ulpgc.da.ejemplo.R;
 
 public class ViewCounter extends Activity implements IViewCounter {
 
-    private IPresenterCounter presenterCounter;
+    private MediatorCounter mediatorCounter;
     private TextView display;
     private Button boton;
 
@@ -20,7 +19,7 @@ public class ViewCounter extends Activity implements IViewCounter {
 
         @Override
         public void onClick(View v) {
-            presenterCounter.onClickBoton();
+            mediatorCounter.getPresenterCounter().onClickBoton();
         }
     }
 
@@ -39,6 +38,7 @@ public class ViewCounter extends Activity implements IViewCounter {
         boton   = (Button)findViewById(R.id.boton);
         boton.setOnClickListener(new BotonListener());
 
-        presenterCounter = new PresenterCounter(this);
+        mediatorCounter = (MediatorCounter)this.getApplication();
+        mediatorCounter.setMVP(this);
     }
 }

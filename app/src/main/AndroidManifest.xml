@@ -3,7 +3,7 @@
     package="es.ulpgc.da.ejemplo">
 
     <application
-        android:name=".Mediator"
+        android:name=".MediatorCounter"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

@@ -1,20 +1,16 @@
 package es.ulpgc.da.ejemplo.presenter;
 
-import es.ulpgc.da.ejemplo.model.ModelCounter;
-import es.ulpgc.da.ejemplo.model.IModelCounter;
-import es.ulpgc.da.ejemplo.view.IViewCounter;
+import es.ulpgc.da.ejemplo.MediatorCounter;
 
 public class PresenterCounter implements IPresenterCounter{
-    private IViewCounter viewCounter;
-    private IModelCounter modelCounter;
+    private MediatorCounter mediatorCounter;
 
-    public PresenterCounter(IViewCounter viewCounter) {
-        this.viewCounter = viewCounter;
-        this.modelCounter = new ModelCounter();
+    public PresenterCounter(MediatorCounter mediatorCounter) {
+        this.mediatorCounter = mediatorCounter;
     }
 
     public void onClickBoton() {
-        modelCounter.setNextCounter();
-        viewCounter.setDisplay(modelCounter.toString());
+        mediatorCounter.getModelCounter().setNextCounter();
+        mediatorCounter.getViewCounter().setDisplay(mediatorCounter.getModelCounter().toString());
     }
 }
