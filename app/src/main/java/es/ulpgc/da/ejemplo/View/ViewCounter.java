@@ -11,20 +11,14 @@ import es.ulpgc.da.ejemplo.R;
 
 public class ViewCounter extends Activity implements IViewCounter {
 
-    private MediatorCounter mediatorCounter;
     private TextView display;
-    private Button boton;
-
-    public class BotonListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            mediatorCounter.getPresenterCounter().onClickBoton();
-        }
-    }
 
     public void setDisplay(String display){
         this.display.setText(display);
+    }
+
+    private MediatorCounter mediatorCounter(){
+        return (MediatorCounter)this.getApplication();
     }
 
     // Esta actividad es la principal
@@ -35,10 +29,14 @@ public class ViewCounter extends Activity implements IViewCounter {
 
         display = (TextView)findViewById(R.id.display);
 
-        boton   = (Button)findViewById(R.id.boton);
-        boton.setOnClickListener(new BotonListener());
+        Button boton = (Button)findViewById(R.id.boton);
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mediatorCounter().getPresenterCounter().onClickBoton();
+            }
+        });
 
-        mediatorCounter = (MediatorCounter)this.getApplication();
-        mediatorCounter.setMVP(this);
+        mediatorCounter().setMVP(this);
     }
 }

@@ -6,14 +6,16 @@ public class ModelCounter implements IModelCounter{
     public ModelCounter() {
         counter = 0;
     }
+
     public int getCounter(){
         return counter;
     }
+    public void setNextCounter(){
+        counter++;
+    }
+
     @Override
     public String toString(){
         return ((Integer) getCounter()).toString();
-    }
-    public void setNextCounter(){
-        counter++;
     }
 }

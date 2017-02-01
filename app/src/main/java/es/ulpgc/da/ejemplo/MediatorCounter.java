@@ -1,14 +1,12 @@
 package es.ulpgc.da.ejemplo;
 
 import android.app.Application;
-import android.content.Intent;
 
 import es.ulpgc.da.ejemplo.model.IModelCounter;
 import es.ulpgc.da.ejemplo.model.ModelCounter;
 import es.ulpgc.da.ejemplo.presenter.IPresenterCounter;
 import es.ulpgc.da.ejemplo.presenter.PresenterCounter;
 import es.ulpgc.da.ejemplo.view.IViewCounter;
-import es.ulpgc.da.ejemplo.view.ViewCounter;
 
 /**
  * Created by fguerra on 30/1/17.
@@ -16,8 +14,8 @@ import es.ulpgc.da.ejemplo.view.ViewCounter;
 
 public class MediatorCounter extends Application {
     private IModelCounter     modelCounter;
-    private IPresenterCounter presenterCounter;
     private IViewCounter      viewCounter;
+    private IPresenterCounter presenterCounter;
 
     public IPresenterCounter getPresenterCounter(){
         return presenterCounter;
